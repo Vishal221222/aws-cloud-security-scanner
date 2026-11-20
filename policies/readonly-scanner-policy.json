@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadOnlyIdentityAndAccountDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "sts:GetCallerIdentity",
+        "iam:GetAccountSummary",
+        "iam:GetAccountAuthorizationDetails"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadOnlyS3ConfigurationInspection",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation",
+        "s3:GetPublicAccessBlock",
+        "s3:GetBucketPolicyStatus",
+        "s3:GetBucketAcl",
+        "s3:GetEncryptionConfiguration",
+        "s3:GetBucketVersioning",
+        "s3:GetBucketLogging"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadOnlyRegionalResourceInspection",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVolumes",
+        "rds:DescribeDBInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadOnlyCloudTrailInspection",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:GetTrailStatus"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
